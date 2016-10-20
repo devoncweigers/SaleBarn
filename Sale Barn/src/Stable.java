@@ -84,11 +84,14 @@ public class Stable
 			
 				String fakeVariable = userInput.nextLine();
 				
+				
 				System.out.println("What breed are you most intrested in?");
 				for(int i = 0; i < stable.size(); i++)
 					{
 					System.out.println(i + 1 + ". " + stable.get(i).getBreed());
 					}
+				
+				
 				
 				System.out.println("How old would you like your horse to be?");
 				for(int i = 0; i < stable.size(); i++)

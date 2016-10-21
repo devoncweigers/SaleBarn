@@ -5,7 +5,7 @@ public class Stable
 	{
 		static ArrayList <Horse> stable = new ArrayList <Horse>();
 		
-		int counter;
+		static int counter;
 		int counter2;
 		int counter3;
 		int counter4;
@@ -19,19 +19,19 @@ public class Stable
 				fillStable();
 				greetBuyer();
 				displayMenu();
-				
+				getPoints();
 			}
 
 		public static void fillStable()
 			{
 			
-				stable.add(new Horse("George", "Holsteiner", "Hunter, Jumper and Equitation Rings", 10, 120000, 16.2, "3'6 Equitation Medals, International Hunter Derbies and Meter 1.10-1.15 Jumpers"));	
-				stable.add(new Horse("Argo", "Dutch Warmblood", "Hunter Ring", 12, 250000, 16, "3'6 Amateur Owner Hunters and International Hunter Derbies"));
-				stable.add(new Horse("Emerald", "Holsteiner", "Jumper Ring", 14, 750000, 16.1, "1.60 Grand Prix and Olympic Show Jumping"));
-				stable.add(new Horse("Lincoln", "Oldenberg", "Hunter and Equitation Rings", 5, 45000, 15.2, "2'6 Baby Green Hunters"));
-				stable.add(new Horse("Lucy", "Holsteiner", "Jumper Ring", 17, 30000, 15.3, "1.20 Jumpers and High Childrens Jumpers"));
-				stable.add(new Horse("Nicco", "Dutch Warmblood", "Hunter Ring", 12, 60000, 17.3, "Pre-Adult Hunters and National Hunter Derbies")); 
-				stable.add(new Horse("Celcius", "Dutch Warmblood", "Equitation Ring", 8, 175000, 17, "3'6 Equitation Medals and Age Group Equitation Divison"));
+				stable.add(new Horse("George", "Holsteiner", "Hunter, Jumper and Equitation Rings", 10, 120000, 16.2, "3'6 Equitation Medals, International Hunter Derbies and Meter 1.10-1.15 Jumpers", 0));	
+				stable.add(new Horse("Argo", "Dutch Warmblood", "Hunter and Jumper Rings", 12, 250000, 16, "3'6 Amateur Owner Hunters and International Hunter Derbies", 0));
+				stable.add(new Horse("Emerald", "Argentinian Warmblood", "Jumper and Equitation Rings", 14, 750000, 16.1, "1.60 Grand Prix and Olympic Show Jumping", 0));
+				stable.add(new Horse("Lincoln", "Oldenberg", "Hunter and Equitation Rings", 5, 45000, 15.2, "2'6 Baby Green Hunters", 0));
+				stable.add(new Horse("Lucy", "Hanoverian", "Jumper Ring", 17, 30000, 15.3, "1.20 Jumpers and High Childrens Jumpers", 0));
+				stable.add(new Horse("Nicco", "Westphalian", "Hunter Ring", 12, 60000, 17.3, "Pre-Adult Hunters and National Hunter Derbies", 0)); 
+				stable.add(new Horse("Celcius", "Selle Francais", "Equitation Ring", 8, 175000, 17, "3'6 Equitation Medals and Age Group Equitation Divison", 0));
 				
 			
 			}
@@ -50,8 +50,7 @@ public class Stable
 			Scanner userInput = new Scanner(System.in);
 			
 			System.out.println("Would you like to buy a horse, sell a horse or get a horse's information?");
-			System.out.println("Type in the number 1 to proceed forth with buying, 2 with selling, or 3 with"
-							+ " retrieving information.");
+			System.out.println("Type in the number 1 to proceed forth with buying or 2 with retrieving information.");
 			int userAnswer = userInput.nextInt();
 			
 			
@@ -62,12 +61,7 @@ public class Stable
 				}
 			else if (userAnswer == 2)
 				{
-					sellHorse();
-				}
-			else if (userAnswer == 3)
-				{
 					getHorseInformation();
-					
 				}
 			
 			}
@@ -85,27 +79,47 @@ public class Stable
 				String fakeVariable = userInput.nextLine();
 				
 				
+				
 				System.out.println("What breed are you most intrested in?");
 				for(int i = 0; i < stable.size(); i++)
 					{
 					System.out.println(i + 1 + ". " + stable.get(i).getBreed());
 					}
-				
-				
-				
 				System.out.println("How old would you like your horse to be?");
+				
 				for(int i = 0; i < stable.size(); i++)
 					{
 					System.out.println(i + 1 + ". " + stable.get(i).getAge());
 					}
 				
+				System.out.println("What ring(s) would you like your horse to specialize in?");
+				for(int i = 0; i < stable.size(); i++)
+					{
+					System.out.println(i + 1 + ". " + stable.get(i).getDiscipline());
+					}
 				
-			}
-	
-		public static void sellHorse()
-			{
+				System.out.println("How many hands tall is the horse of your preference?");
+				for(int i = 0; i < stable.size(); i++)
+					{
+					System.out.println(i + 1 + ". " + stable.get(i).getHands());
+					}
+				
+				System.out.println("What is your price range?");
+				for(int i = 0; i < stable.size(); i++)
+					{
+					System.out.println(i + 1 + ". " + stable.get(i).getPrice());
+					}
 			
 			}
+		public static void getPoints()
+			{
+			Scanner userInput = new Scanner (System.in);	
+			int userDecision = userInput.nextInt();
+				
+			stable.get(userDecision-1).setPoints(stable.get(userDecision-1).getPoints() + 1);
+			}
+		
+		
 		public static void getHorseInformation()
 			{
 				Scanner userInput = new Scanner (System.in);

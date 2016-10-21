@@ -9,10 +9,10 @@ public class Horse
 		int price;
 		double hands;
 		String events;
+		int points;
 		
 		
-		
-		public Horse(String n, String b, String d, int a, int p, double h, String e)
+		public Horse(String n, String b, String d, int a, int p, double h, String e, int po)
 			{
 				
 			name = n;
@@ -22,74 +22,105 @@ public class Horse
 			price = p;
 			hands = h;
 			events = e;
-				
-
+			points = po; 
+			
 			}
+
 
 		public String getName()
-		{
-		return name; 		
-		}
-	
-			public void setName(String name)
 			{
-			this.name = name;
+				return name;
 			}
-	
+
+
+		public void setName(String name)
+			{
+				this.name = name;
+			}
+
+
 		public String getBreed()
-		{
-		return breed;
-		}
-			
-			public void setBreed(String breed)
 			{
-			this.breed = breed;
+				return breed;
 			}
-	
+
+
+		public void setBreed(String breed)
+			{
+				this.breed = breed;
+			}
+
+
 		public String getDiscipline()
-		{
-		return discipline;	
-		}
-			public void setDiscipline()
 			{
-			this.discipline = discipline; 
+				return discipline;
 			}
-	
+
+
+		public void setDiscipline(String discipline)
+			{
+				this.discipline = discipline;
+			}
+
+
 		public int getAge()
-		{
-		return age;	
-		}
-			public void setAge()
 			{
-			this.age = age;
+				return age;
 			}
-	
+
+
+		public void setAge(int age)
+			{
+				this.age = age;
+			}
+
+
 		public int getPrice()
-		{
-		return price;
-		}
-			public void setPrice()
 			{
-			this.price = price;
+				return price;
 			}
-			
+
+
+		public void setPrice(int price)
+			{
+				this.price = price;
+			}
+
+
 		public double getHands()
-		{
-		return hands;
-		}
-			public void setHands()
 			{
-			this.hands = hands;
+				return hands;
 			}
-			
+
+
+		public void setHands(double hands)
+			{
+				this.hands = hands;
+			}
+
+
 		public String getEvents()
-		{
-		return events;
-		}
-			public void setEvents()
 			{
-			this.events = events;
+				return events;
 			}
-	
-	
+
+
+		public void setEvents(String events)
+			{
+				this.events = events;
+			}
+
+
+		public int getPoints()
+			{
+				return points;
+			}
+
+
+		public void setPoints(int points)
+			{
+				this.points = points;
+			}
+
+		
 	}

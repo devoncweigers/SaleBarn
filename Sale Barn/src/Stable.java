@@ -62,10 +62,10 @@ public class Stable
 			{
 				Scanner userInput = new Scanner (System.in);
 				
-				System.out.println("Alright. We have seven different horses available, each with different characteristics"
+				System.out.println("Alright. We have seven different horses available, each with different\ncharacteristics"
 								+ " and capabilities.");
 				System.out.println("We will ask you a series of questions to match you up with the proper mount. "
-						+ "Go ahead and press enter to proceed with your horse search.");
+						+ "\nGo ahead and press enter to proceed with your horse search.");
 			
 				String fakeVariable = userInput.nextLine();
 				
@@ -118,12 +118,87 @@ public class Stable
 			}
 		
 		public static void addPoints()
+		{
+			if(stable.get(0).getPoints() > stable.get(1).getPoints() ||
+					stable.get(0).getPoints() > stable.get(2).getPoints() ||
+					stable.get(0).getPoints() > stable.get(3).getPoints() ||
+					stable.get(0).getPoints() > stable.get(4).getPoints() ||
+					stable.get(0).getPoints() > stable.get(5).getPoints() ||
+					stable.get(0).getPoints() > stable.get(6).getPoints())
+				{
+				System.out.println(stable.get(0).getName());
+				}
+			
+			else if(stable.get(1).getPoints() > stable.get(0).getPoints() ||
+					stable.get(1).getPoints() > stable.get(2).getPoints() ||
+					stable.get(1).getPoints() > stable.get(3).getPoints() ||
+					stable.get(1).getPoints() > stable.get(4).getPoints() ||
+					stable.get(1).getPoints() > stable.get(5).getPoints() ||
+					stable.get(1).getPoints() > stable.get(6).getPoints())
+					{
+					System.out.println(stable.get(1).getName());
+					}
+			
+			else if(stable.get(2).getPoints() > stable.get(0).getPoints() ||
+					stable.get(2).getPoints() > stable.get(1).getPoints() ||
+					stable.get(2).getPoints() > stable.get(3).getPoints() ||
+					stable.get(2).getPoints() > stable.get(4).getPoints() ||
+					stable.get(2).getPoints() > stable.get(5).getPoints() ||
+					stable.get(2).getPoints() > stable.get(6).getPoints())
+					{
+					System.out.println(stable.get(2).getName());
+					}
+			
+			else if(stable.get(3).getPoints() > stable.get(0).getPoints() ||
+					stable.get(3).getPoints() > stable.get(1).getPoints() ||
+					stable.get(3).getPoints() > stable.get(2).getPoints() ||
+					stable.get(3).getPoints() > stable.get(4).getPoints() ||
+					stable.get(3).getPoints() > stable.get(5).getPoints() ||
+					stable.get(3).getPoints() > stable.get(6).getPoints())
+					{
+					System.out.println(stable.get(3).getName());
+					}
+			
+			else if(stable.get(4).getPoints() > stable.get(0).getPoints() ||
+					stable.get(4).getPoints() > stable.get(1).getPoints() ||
+					stable.get(4).getPoints() > stable.get(2).getPoints() ||
+					stable.get(4).getPoints() > stable.get(3).getPoints() ||
+					stable.get(4).getPoints() > stable.get(5).getPoints() ||
+					stable.get(4).getPoints() > stable.get(6).getPoints())
+					{
+					System.out.println(stable.get(4).getName());
+					}
+			
+			else if(stable.get(5).getPoints() > stable.get(0).getPoints() ||
+					stable.get(5).getPoints() > stable.get(1).getPoints() ||
+					stable.get(5).getPoints() > stable.get(2).getPoints() ||
+					stable.get(5).getPoints() > stable.get(3).getPoints() ||
+					stable.get(5).getPoints() > stable.get(4).getPoints() ||
+					stable.get(5).getPoints() > stable.get(6).getPoints())
+					{
+					System.out.println(stable.get(5).getName());
+					}
+			
+			else if(stable.get(6).getPoints() > stable.get(0).getPoints() ||
+					stable.get(6).getPoints() > stable.get(1).getPoints() ||
+					stable.get(6).getPoints() > stable.get(2).getPoints() ||
+					stable.get(6).getPoints() > stable.get(3).getPoints() ||
+					stable.get(6).getPoints() > stable.get(4).getPoints() ||
+					stable.get(6).getPoints() > stable.get(5).getPoints())
+					{
+					System.out.println(stable.get(6).getName());
+					}
+		
+			}
+		
+		//public static void addPoints()
 			{
 			Scanner userInput = new Scanner (System.in);
 
 			int highPoints;
 		
 			highPoints = stable.get(0).getPoints();
+			
 			for(Horse h: stable)
 				{
 				if (h.getPoints() > highPoints)
@@ -132,17 +207,10 @@ public class Stable
 					}
 				
 				}
-			
-			
-				highPoints = thePerfectHorse;	
+				
 				System.out.println(highPoints);
-				
-				int thePerfectHorse = userInput.nextInt();	
-				
-				highPoints = thePerfectHorse;
+
 			
-				
-				System.out.println(stable.get(thePerfectHorse).getName());
 				
 			}
 		public static void getHorseInformation()
@@ -161,8 +229,8 @@ public class Stable
 				int userNumberChoice = userInput.nextInt();
 						
 				System.out.println(stable.get(userNumberChoice-1).getName() + " is a " + stable.get(userNumberChoice-1).getAge() + " year old "
-								+ stable.get(userNumberChoice-1).getBreed() + " who is " + stable.get(userNumberChoice-1).getHands() + " hands tall."  + " This horse specializes"
-								+ " in the " + stable.get(userNumberChoice-1).getDiscipline() + " and is currently showing in the " + stable.get(userNumberChoice-1).getEvents() + ".");
+								+ stable.get(userNumberChoice-1).getBreed() + " who is " + stable.get(userNumberChoice-1).getHands() + " hands tall."  + "\nThis horse specializes "
+								+ "in the " + stable.get(userNumberChoice-1).getDiscipline() + " and is currently\nshowing in the " + stable.get(userNumberChoice-1).getEvents() + ".");
 					
 
 				
